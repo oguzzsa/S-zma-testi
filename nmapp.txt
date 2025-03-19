@@ -1,0 +1,273 @@
+┌──(kali㉿kali)-[~]
+└─$ sudo su                           
+[sudo] password for kali: 
+┌──(root㉿kali)-[/home/kali]
+└─# nmap -sV -O -A www.yabanavmalzemeleri.com
+Starting Nmap 7.94SVN ( https://nmap.org ) at 2024-02-02 16:27 EST
+Nmap scan report for www.yabanavmalzemeleri.com (104.17.35.34)
+Host is up (0.0018s latency).
+Other addresses for www.yabanavmalzemeleri.com (not scanned): 104.17.34.34
+Not shown: 997 filtered tcp ports (no-response)
+PORT     STATE SERVICE    VERSION
+80/tcp   open  tcpwrapped
+|_http-server-header: cloudflare
+|_http-title: Did not follow redirect to https://www.yabanavmalzemeleri.com/
+443/tcp  open  tcpwrapped
+|_http-server-header: cloudflare
+| ssl-cert: Subject: commonName=yabanavmalzemeleri.com/organizationName=Cloudflare, Inc./stateOrProvinceName=California/countryName=US
+| Subject Alternative Name: DNS:*.yabanavmalzemeleri.com, DNS:yabanavmalzemeleri.com
+| Not valid before: 2023-10-18T00:00:00
+|_Not valid after:  2024-10-17T23:59:59
+| tls-alpn: 
+|   h2
+|_  http/1.1
+| tls-nextprotoneg: 
+|   h2
+|_  http/1.1
+|_ssl-date: TLS randomness does not represent time
+8080/tcp open  tcpwrapped
+|_http-server-header: cloudflare
+Warning: OSScan results may be unreliable because we could not find at least 1 open and 1 closed port
+OS fingerprint not ideal because: Missing a closed TCP port so results incomplete
+No OS matches for host
+Network Distance: 1 hop
+
+TRACEROUTE (using port 80/tcp)
+HOP RTT     ADDRESS
+1   0.23 ms 104.17.35.34
+
+OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 25.20 seconds
+                                                                             
+┌──(root㉿kali)-[/home/kali]
+└─# nmap -n -vv -A www.yabanavmalzemeleri.com --min-parallelism=50 --max-parallelism=150 -PN -T2 -oA www.yabanavmalzemeleri.com
+Host discovery disabled (-Pn). All addresses will be marked 'up' and scan times may be slower.
+Warning: The -PN option is deprecated. Please use -Pn
+Starting Nmap 7.94SVN ( https://nmap.org ) at 2024-02-02 16:29 EST
+NSE: Loaded 156 scripts for scanning.
+NSE: Script Pre-scanning.
+NSE: Starting runlevel 1 (of 3) scan.
+Initiating NSE at 16:29
+Completed NSE at 16:29, 0.00s elapsed
+NSE: Starting runlevel 2 (of 3) scan.
+Initiating NSE at 16:29
+Completed NSE at 16:29, 0.00s elapsed
+NSE: Starting runlevel 3 (of 3) scan.
+Initiating NSE at 16:29
+Completed NSE at 16:29, 0.00s elapsed
+Warning: Hostname www.yabanavmalzemeleri.com resolves to 2 IPs. Using 104.17.35.34.
+Initiating SYN Stealth Scan at 16:29
+Scanning www.yabanavmalzemeleri.com (104.17.35.34) [1000 ports]
+Discovered open port 8080/tcp on 104.17.35.34
+Discovered open port 80/tcp on 104.17.35.34
+Discovered open port 443/tcp on 104.17.35.34
+SYN Stealth Scan Timing: About 3.60% done; ETC: 16:43 (0:13:50 remaining)
+Stats: 0:00:53 elapsed; 0 hosts completed (1 up), 1 undergoing SYN Stealth Scan
+SYN Stealth Scan Timing: About 6.05% done; ETC: 16:43 (0:13:43 remaining)
+SYN Stealth Scan Timing: About 11.50% done; ETC: 16:43 (0:12:57 remaining)
+SYN Stealth Scan Timing: About 16.95% done; ETC: 16:43 (0:12:10 remaining)
+Discovered open port 8443/tcp on 104.17.35.34
+SYN Stealth Scan Timing: About 22.10% done; ETC: 16:43 (0:11:24 remaining)
+SYN Stealth Scan Timing: About 27.20% done; ETC: 16:43 (0:10:40 remaining)
+SYN Stealth Scan Timing: About 32.65% done; ETC: 16:43 (0:09:52 remaining)                                                                                                                                                                  
+SYN Stealth Scan Timing: About 37.75% done; ETC: 16:43 (0:09:07 remaining)                                                                                                                                                                  
+SYN Stealth Scan Timing: About 43.20% done; ETC: 16:43 (0:08:20 remaining)                                                                                                                                                                  
+SYN Stealth Scan Timing: About 48.25% done; ETC: 16:43 (0:07:36 remaining)                                                                                                                                                                  
+SYN Stealth Scan Timing: About 53.35% done; ETC: 16:43 (0:06:51 remaining)                                                                                                                                                                  
+SYN Stealth Scan Timing: About 58.45% done; ETC: 16:43 (0:06:06 remaining)                                                                                                                                                                  
+SYN Stealth Scan Timing: About 63.55% done; ETC: 16:43 (0:05:21 remaining)                                                                                                                                                                  
+SYN Stealth Scan Timing: About 68.70% done; ETC: 16:43 (0:04:36 remaining)                                                                                                                                                                  
+SYN Stealth Scan Timing: About 73.75% done; ETC: 16:43 (0:03:51 remaining)                                                                                                                                                                  
+SYN Stealth Scan Timing: About 78.85% done; ETC: 16:43 (0:03:06 remaining)                                                                                                                                                                  
+SYN Stealth Scan Timing: About 83.95% done; ETC: 16:43 (0:02:21 remaining)                                                                                                                                                                  
+SYN Stealth Scan Timing: About 89.05% done; ETC: 16:43 (0:01:37 remaining)                                                                                                                                                                  
+SYN Stealth Scan Timing: About 94.20% done; ETC: 16:43 (0:00:51 remaining)                                                                                                                                                                  
+Completed SYN Stealth Scan at 16:43, 881.85s elapsed (1000 total ports)                                                                                                                                                                     
+Initiating Service scan at 16:43                                                                                                                                                                                                            
+Scanning 4 services on www.yabanavmalzemeleri.com (104.17.35.34)                                                                                                                                                                            
+Completed Service scan at 16:43, 12.16s elapsed (4 services on 1 host)                                                                                                                                                                      
+Initiating OS detection (try #1) against www.yabanavmalzemeleri.com (104.17.35.34)                                                                                                                                                          
+Retrying OS detection (try #2) against www.yabanavmalzemeleri.com (104.17.35.34)                                                                                                                                                            
+Initiating Traceroute at 16:44                                                                                                                                                                                                              
+Completed Traceroute at 16:44, 0.80s elapsed                                                                                                                                                                                                
+NSE: Script scanning 104.17.35.34.                                                                                                                                                                                                          
+NSE: Starting runlevel 1 (of 3) scan.                                                                                                                                                                                                       
+Initiating NSE at 16:44                                                                                                                                                                                                                     
+Completed NSE at 16:44, 5.14s elapsed                                                                                                                                                                                                       
+NSE: Starting runlevel 2 (of 3) scan.
+Initiating NSE at 16:44
+Completed NSE at 16:44, 1.35s elapsed
+NSE: Starting runlevel 3 (of 3) scan.
+Initiating NSE at 16:44
+Completed NSE at 16:44, 0.00s elapsed
+Nmap scan report for www.yabanavmalzemeleri.com (104.17.35.34)
+Host is up, received user-set (0.014s latency).
+Other addresses for www.yabanavmalzemeleri.com (not scanned): 104.17.34.34
+Scanned at 2024-02-02 16:29:04 EST for 927s
+Not shown: 996 filtered tcp ports (no-response)
+PORT     STATE SERVICE  REASON          VERSION
+80/tcp   open  http     syn-ack ttl 255 Cloudflare http proxy
+|_http-server-header: cloudflare
+|_http-title: Did not follow redirect to https://www.yabanavmalzemeleri.com/
+| http-methods: 
+|_  Supported Methods: HEAD POST OPTIONS
+443/tcp  open  ssl/http syn-ack ttl 255 Cloudflare http proxy
+|_http-favicon: Unknown favicon MD5: 8F328844A810D3C1B02C71DC9354C20A
+|_http-title: YABAN - Av T\xC3\xBCfekleri, Haval\xC4\xB1 Tabanca ve Av Malzemeleri
+| tls-alpn: 
+|   h2
+|_  http/1.1
+|_http-server-header: cloudflare
+| ssl-cert: Subject: commonName=yabanavmalzemeleri.com/organizationName=Cloudflare, Inc./stateOrProvinceName=California/countryName=US/localityName=San Francisco
+| Subject Alternative Name: DNS:*.yabanavmalzemeleri.com, DNS:yabanavmalzemeleri.com
+| Issuer: commonName=Cloudflare Inc ECC CA-3/organizationName=Cloudflare, Inc./countryName=US
+| Public Key type: ec
+| Public Key bits: 256
+| Signature Algorithm: ecdsa-with-SHA256
+| Not valid before: 2023-10-18T00:00:00
+| Not valid after:  2024-10-17T23:59:59
+| MD5:   8277:b8c7:8b8b:65d8:ec09:7b38:0d61:71c3
+| SHA-1: d6da:c8f9:a067:f80e:f34b:cdcf:bfaf:f425:94b5:d812
+| -----BEGIN CERTIFICATE-----
+| MIIFNDCCBNqgAwIBAgIQDXeU6jteunAsQG1JdCl99zAKBggqhkjOPQQDAjBKMQsw
+| CQYDVQQGEwJVUzEZMBcGA1UEChMQQ2xvdWRmbGFyZSwgSW5jLjEgMB4GA1UEAxMX
+| Q2xvdWRmbGFyZSBJbmMgRUNDIENBLTMwHhcNMjMxMDE4MDAwMDAwWhcNMjQxMDE3
+| MjM1OTU5WjB2MQswCQYDVQQGEwJVUzETMBEGA1UECBMKQ2FsaWZvcm5pYTEWMBQG
+| A1UEBxMNU2FuIEZyYW5jaXNjbzEZMBcGA1UEChMQQ2xvdWRmbGFyZSwgSW5jLjEf
+| MB0GA1UEAxMWeWFiYW5hdm1hbHplbWVsZXJpLmNvbTBZMBMGByqGSM49AgEGCCqG
+| SM49AwEHA0IABDXNrwkz92TaTHKFxVnBN7/Qw1I23fVQswP3JXuONFSLS8ya4Yyu
+| 2mx82clzR/OOjbkdl0OaC9660d0Nf2or9byjggN0MIIDcDAfBgNVHSMEGDAWgBSl
+| zjfq67B1DpRniLRF+tkkEIeWHzAdBgNVHQ4EFgQUa1zj7mNv0WpQOpEgYUMZ+o7X
+| h6kwOwYDVR0RBDQwMoIYKi55YWJhbmF2bWFsemVtZWxlcmkuY29tghZ5YWJhbmF2
+| bWFsemVtZWxlcmkuY29tMD4GA1UdIAQ3MDUwMwYGZ4EMAQICMCkwJwYIKwYBBQUH
+| AgEWG2h0dHA6Ly93d3cuZGlnaWNlcnQuY29tL0NQUzAOBgNVHQ8BAf8EBAMCA4gw
+| HQYDVR0lBBYwFAYIKwYBBQUHAwEGCCsGAQUFBwMCMHsGA1UdHwR0MHIwN6A1oDOG
+| MWh0dHA6Ly9jcmwzLmRpZ2ljZXJ0LmNvbS9DbG91ZGZsYXJlSW5jRUNDQ0EtMy5j
+| cmwwN6A1oDOGMWh0dHA6Ly9jcmw0LmRpZ2ljZXJ0LmNvbS9DbG91ZGZsYXJlSW5j
+| RUNDQ0EtMy5jcmwwdgYIKwYBBQUHAQEEajBoMCQGCCsGAQUFBzABhhhodHRwOi8v
+| b2NzcC5kaWdpY2VydC5jb20wQAYIKwYBBQUHMAKGNGh0dHA6Ly9jYWNlcnRzLmRp
+| Z2ljZXJ0LmNvbS9DbG91ZGZsYXJlSW5jRUNDQ0EtMy5jcnQwDAYDVR0TAQH/BAIw
+| ADCCAX0GCisGAQQB1nkCBAIEggFtBIIBaQFnAHYA7s3QZNXbGs7FXLedtM0TojKH
+| Rny87N7DUUhZRnEftZsAAAGLQCpWiQAABAMARzBFAiASGlrA06lDf0/gg+NmNyt0
+| yTDgZrsZxXl+V685997iQQIhAN/z7c997HY46B6175MYbqmBzze41q+BWamzwJFw
+| p5/MAHYASLDja9qmRzQP5WoC+p0w6xxSActW3SyB2bu/qznYhHMAAAGLQCpWwAAA
+| BAMARzBFAiEA2B2zkpVLhtwQkUQREUmvRU47n/Mqrx4G4DMnuOvfuToCIBSYSe6i
+| lg8mmOrN1qfVhLd0L+idX2DS/Yr6QhjptjHNAHUA2ra/az+1tiKfm8K7XGvocJFx
+| bLtRhIU0vaQ9MEjX+6sAAAGLQCpWsgAABAMARjBEAiADIJ1kmH3/GVtupXgbFdRa
+| sBdGgUt53MkNX79W7MU1cgIgaPC9tLPYQDRBSwGFNreLTf4Ucwxmurv4ww8Vw6SL
+| c7QwCgYIKoZIzj0EAwIDSAAwRQIgGdAj9Ph97du7S/kYsz8/ujDec+63t6a7768G
+| YTt7+10CIQC/UalfXKGMJx4jNo79a7eBPFDsaRw5p/O5PYJMHo5z5w==
+|_-----END CERTIFICATE-----
+| tls-nextprotoneg: 
+|   h2
+|_  http/1.1
+| http-robots.txt: 16 disallowed entries 
+| / /uye-girisi /uye-girisi?next=order2 /uye-ol 
+| /uye-ol?next=order2 /sifremi-unuttum /sepet /hesabim /hesabim/* /dosya/ 
+| /admin/ /brand/listByCategory/categoryId/ 
+|_/brand/listByCategory/categoryId/* /cart/ /cart/* /*index.php?do=catalog/print&
+| http-methods: 
+|_  Supported Methods: GET HEAD POST
+|_ssl-date: TLS randomness does not represent time
+8080/tcp open  http     syn-ack ttl 255 Cloudflare http proxy
+|_http-server-header: cloudflare
+|_http-title: Did not follow redirect to https://www.yabanavmalzemeleri.com/
+| http-methods: 
+|_  Supported Methods: HEAD POST OPTIONS
+8443/tcp open  ssl/http syn-ack ttl 255 Cloudflare http proxy
+| tls-alpn: 
+|   h2
+|_  http/1.1
+| ssl-cert: Subject: commonName=yabanavmalzemeleri.com/organizationName=Cloudflare, Inc./stateOrProvinceName=California/countryName=US/localityName=San Francisco
+| Subject Alternative Name: DNS:*.yabanavmalzemeleri.com, DNS:yabanavmalzemeleri.com
+| Issuer: commonName=Cloudflare Inc ECC CA-3/organizationName=Cloudflare, Inc./countryName=US
+| Public Key type: ec
+| Public Key bits: 256
+| Signature Algorithm: ecdsa-with-SHA256
+| Not valid before: 2023-10-18T00:00:00
+| Not valid after:  2024-10-17T23:59:59
+| MD5:   8277:b8c7:8b8b:65d8:ec09:7b38:0d61:71c3
+| SHA-1: d6da:c8f9:a067:f80e:f34b:cdcf:bfaf:f425:94b5:d812
+| -----BEGIN CERTIFICATE-----
+| MIIFNDCCBNqgAwIBAgIQDXeU6jteunAsQG1JdCl99zAKBggqhkjOPQQDAjBKMQsw
+| CQYDVQQGEwJVUzEZMBcGA1UEChMQQ2xvdWRmbGFyZSwgSW5jLjEgMB4GA1UEAxMX
+| Q2xvdWRmbGFyZSBJbmMgRUNDIENBLTMwHhcNMjMxMDE4MDAwMDAwWhcNMjQxMDE3
+| MjM1OTU5WjB2MQswCQYDVQQGEwJVUzETMBEGA1UECBMKQ2FsaWZvcm5pYTEWMBQG
+| A1UEBxMNU2FuIEZyYW5jaXNjbzEZMBcGA1UEChMQQ2xvdWRmbGFyZSwgSW5jLjEf
+| MB0GA1UEAxMWeWFiYW5hdm1hbHplbWVsZXJpLmNvbTBZMBMGByqGSM49AgEGCCqG
+| SM49AwEHA0IABDXNrwkz92TaTHKFxVnBN7/Qw1I23fVQswP3JXuONFSLS8ya4Yyu
+| 2mx82clzR/OOjbkdl0OaC9660d0Nf2or9byjggN0MIIDcDAfBgNVHSMEGDAWgBSl
+| zjfq67B1DpRniLRF+tkkEIeWHzAdBgNVHQ4EFgQUa1zj7mNv0WpQOpEgYUMZ+o7X
+| h6kwOwYDVR0RBDQwMoIYKi55YWJhbmF2bWFsemVtZWxlcmkuY29tghZ5YWJhbmF2
+| bWFsemVtZWxlcmkuY29tMD4GA1UdIAQ3MDUwMwYGZ4EMAQICMCkwJwYIKwYBBQUH
+| AgEWG2h0dHA6Ly93d3cuZGlnaWNlcnQuY29tL0NQUzAOBgNVHQ8BAf8EBAMCA4gw
+| HQYDVR0lBBYwFAYIKwYBBQUHAwEGCCsGAQUFBwMCMHsGA1UdHwR0MHIwN6A1oDOG
+| MWh0dHA6Ly9jcmwzLmRpZ2ljZXJ0LmNvbS9DbG91ZGZsYXJlSW5jRUNDQ0EtMy5j
+| cmwwN6A1oDOGMWh0dHA6Ly9jcmw0LmRpZ2ljZXJ0LmNvbS9DbG91ZGZsYXJlSW5j
+| RUNDQ0EtMy5jcmwwdgYIKwYBBQUHAQEEajBoMCQGCCsGAQUFBzABhhhodHRwOi8v
+| b2NzcC5kaWdpY2VydC5jb20wQAYIKwYBBQUHMAKGNGh0dHA6Ly9jYWNlcnRzLmRp
+| Z2ljZXJ0LmNvbS9DbG91ZGZsYXJlSW5jRUNDQ0EtMy5jcnQwDAYDVR0TAQH/BAIw
+| ADCCAX0GCisGAQQB1nkCBAIEggFtBIIBaQFnAHYA7s3QZNXbGs7FXLedtM0TojKH
+| Rny87N7DUUhZRnEftZsAAAGLQCpWiQAABAMARzBFAiASGlrA06lDf0/gg+NmNyt0
+| yTDgZrsZxXl+V685997iQQIhAN/z7c997HY46B6175MYbqmBzze41q+BWamzwJFw
+| p5/MAHYASLDja9qmRzQP5WoC+p0w6xxSActW3SyB2bu/qznYhHMAAAGLQCpWwAAA
+| BAMARzBFAiEA2B2zkpVLhtwQkUQREUmvRU47n/Mqrx4G4DMnuOvfuToCIBSYSe6i
+| lg8mmOrN1qfVhLd0L+idX2DS/Yr6QhjptjHNAHUA2ra/az+1tiKfm8K7XGvocJFx
+| bLtRhIU0vaQ9MEjX+6sAAAGLQCpWsgAABAMARjBEAiADIJ1kmH3/GVtupXgbFdRa
+| sBdGgUt53MkNX79W7MU1cgIgaPC9tLPYQDRBSwGFNreLTf4Ucwxmurv4ww8Vw6SL
+| c7QwCgYIKoZIzj0EAwIDSAAwRQIgGdAj9Ph97du7S/kYsz8/ujDec+63t6a7768G
+| YTt7+10CIQC/UalfXKGMJx4jNo79a7eBPFDsaRw5p/O5PYJMHo5z5w==
+|_-----END CERTIFICATE-----
+|_http-title: 400 The plain HTTP request was sent to HTTPS port
+| tls-nextprotoneg: 
+|   h2
+|_  http/1.1
+|_http-server-header: cloudflare
+|_ssl-date: TLS randomness does not represent time
+Warning: OSScan results may be unreliable because we could not find at least 1 open and 1 closed port
+Device type: VoIP phone|webcam|specialized|firewall|general purpose
+Running (JUST GUESSING): Grandstream embedded (91%), Garmin embedded (90%), 2N embedded (88%), Enlogic embedded (86%), lwIP 1.4.X (86%), FireBrick embedded (85%)
+OS CPE: cpe:/h:grandstream:gxp1105 cpe:/h:garmin:virb_elite cpe:/h:2n:helios cpe:/a:lwip_project:lwip cpe:/h:firebrick:fb2700 cpe:/a:lwip_project:lwip:1.4.0
+OS fingerprint not ideal because: Missing a closed TCP port so results incomplete
+Aggressive OS guesses: Grandstream GXP1105 VoIP phone (91%), Garmin Virb Elite action camera (90%), 2N Helios IP VoIP doorbell (88%), Enlogic PDU (FreeRTOS/lwIP) (86%), FireBrick FB2700 firewall (85%), lwIP 1.4.0 lightweight TCP/IP stack (85%)
+No exact OS matches for host (test conditions non-ideal).
+TCP/IP fingerprint:
+SCAN(V=7.94SVN%E=4%D=2/2%OT=80%CT=%CU=%PV=N%DS=1%DC=T%G=N%TM=65BD623F%P=x86_64-pc-linux-gnu)
+SEQ(SP=15%GCD=1%ISR=63%TI=I%TS=U)
+SEQ(SP=16%GCD=1%ISR=63%TI=I%TS=U)
+OPS(O1=M5B4%O2=M5B4%O3=M5B4%O4=M5B4%O5=M5B4%O6=M5B4)
+WIN(W1=8000%W2=8000%W3=8000%W4=8000%W5=8000%W6=8000)
+ECN(R=Y%DF=N%TG=FF%W=8000%O=M5B4%CC=N%Q=)
+T1(R=Y%DF=N%TG=FF%S=O%A=S+%F=AS%RD=0%Q=)
+T2(R=N)
+T3(R=Y%DF=N%TG=FF%W=8000%S=O%A=S+%F=AS%O=M5B4%RD=0%Q=)
+T4(R=Y%DF=N%TG=FF%W=8000%S=A%A=S%F=AR%O=%RD=0%Q=)
+T6(R=Y%DF=N%TG=FF%W=8000%S=A%A=S%F=AR%O=%RD=0%Q=)
+U1(R=N)
+IE(R=N)
+
+Network Distance: 1 hop
+TCP Sequence Prediction: Difficulty=22 (Good luck!)
+IP ID Sequence Generation: Incremental
+
+TRACEROUTE (using port 8080/tcp)
+HOP RTT     ADDRESS
+1   8.50 ms 104.17.35.34
+
+NSE: Script Post-scanning.
+NSE: Starting runlevel 1 (of 3) scan.
+Initiating NSE at 16:44
+Completed NSE at 16:44, 0.00s elapsed
+NSE: Starting runlevel 2 (of 3) scan.
+Initiating NSE at 16:44
+Completed NSE at 16:44, 0.00s elapsed
+NSE: Starting runlevel 3 (of 3) scan.
+Initiating NSE at 16:44
+Completed NSE at 16:44, 0.00s elapsed
+Read data files from: /usr/bin/../share/nmap
+OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 928.18 seconds
+           Raw packets sent: 2259 (103.440KB) | Rcvd: 229 (10.344KB)
+                                                                                                                                                                                                                                            
+┌──(root㉿kali)-[/home/kali]
+└─# sS                        
